@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Ubuntu, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#outside{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    width: 40%;
+    height: 45rem;
+    overflow: hidden;
+}
+
+#display{
+    justify-self: flex-start;
+    margin-top: 100px;
+    border-top: 5px solid black;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+#nums{
+    margin-right: 20px;
+    font-weight: 700px;
+    font-size: large;
+}
+
+#buttons-container{
+    border-top: 5px solid black;
+    flex: 2 1 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn{
+    flex: 1 1 calc(100%/3);
+    font-size: large;
+}
+
