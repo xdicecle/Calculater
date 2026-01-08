@@ -19,27 +19,39 @@ function multiply(a,b){
 
 //Divide
 function divide(a,b){
-    return a / b;
+    if(b != 0) return a / b;
+    else return "Can't do that boss"
 }
 
 //Number and Operater variables
-
 let num1 = null;
 let sign = null;
 let num2 = null;
+let ans = 0;
+let op = false;
+let check = false;
+let numberKeyPressed = false;
+let equalKeyPressed =false;
 
 //operater function
 
-function operater(str){
+function operater(sign){
+    if(ans > 0) ans;
+    num1 = String(num1).replaceAll(" ","");
+    num2 = String(num2).replaceAll(" ","");
 
-    if(str.indexOf("+")){
-        let strArray = str.split("+");
-        
-    }
-    if(op == "+")      return sum(a,b);
-    else if(op == '-') return subtract(a,b);
-    else if(op == '*') return multiply(a,b);
-    else if(op == '/') return divide(a,b);
+    num1 = +num1;
+    num2 = +num2;
+    if(sign == "+") ans = add(num1,num2);
+    else if(sign == "-") ans = subtract(num1, num2);
+    else if(sign == '*') ans = multiply(num1, num1);
+    else if(sign == '/') ans = divide(num1, num2);
+
+    console.table(ans,sign,num1,num2)
+    if(typeof ans == "number") ans = Math.round(ans);
+    return ans;
+
+    
 }
 
 
@@ -49,20 +61,69 @@ let display = document.querySelector("#nums")
 
  keypad.addEventListener("click", function(e) {
 
+
     if(e.target.tagName !== "BUTTON") return;
     else{
-        let btn = e.target;
-        let num = btn.id;
-
-        if(num == "clear") {
+        let btn = e.target.id;
+        if(equalKeyPressed){
             display.textContent = "";
-            return;
+            num1 = 0;
+            ans = 0;
+            string = 0;
+            sign = 0;
+            op = 0
+            equalKeyPressed = false;
         }
-        else if(num == "="){
-            operater(1,1,1);
-            return;
+
+        if(btn == "clear") {
+            display.textContent = "";
+            num1 = 0;
+            ans = 0;
+            string = 0;
+            sign = 0;
+            op = 0
         }
-        else display.textContent += ` ${num}`;
+        else if(check){
+            check = false;
+            numberKeyPressed = true;
+            display.textContent = "";
+             if(display.textContent !=" +" && display.textContent !=" -" && display.textContent !=" *" 
+            && display.textContent !=" /" ) display.textContent += ` ${btn}`;
+        }
+        else if(op && (btn == "+" || btn == "*" || btn == "-" || btn == "/")){
+
+            if(display.textContent !=" +" && display.textContent !=" -" && display.textContent !=" *" 
+            && display.textContent !=" /" ) num2 = display.textContent;
+
+            display.textContent = operater(sign);
+            sign = btn;
+            check = true;
+            numberKeyPressed = false;
+            num2 = 0;
+            console.log('got there', op);
+        }
+        else if(btn == "+" || btn == "*" || btn == "-" || btn == "/"){
+            sign = btn;
+            if(display.textContent !=" +" && display.textContent !=" -" && display.textContent !=" *" 
+            && display.textContent !=" /" ) num1 = display.textContent;
+            display.textContent = "";
+            numberKeyPressed = false;
+            op = true;
+            console.log('not there', op);
+        }
+        else if(btn == '=' && op && numberKeyPressed){
+            numberKeyPressed = false;
+            equalKeyPressed = true;
+            num2 = display.textContent;
+            display.textContent =  operater(sign);
+        }
+        else if(btn != '='){
+            numberKeyPressed = true;
+             if(display.textContent !=" +" && display.textContent !=" -" && display.textContent !=" *" 
+            && display.textContent !=" /" )display.textContent += ` ${btn}`;
+        }
+
+        
     }
 })
 

@@ -35,6 +35,8 @@ body{
 
 #nums{
     margin-right: 20px;
+    min-width: 30px;
+    height: auto;
     font-weight: 700px;
     font-size: large;
 }
@@ -47,7 +49,7 @@ body{
 }
 
 .btn{
-    flex: 1 1 calc(100%/3);
+    flex: 1 1 calc(100%/4);
     font-size: large;
 }
 
