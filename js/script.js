@@ -36,7 +36,7 @@ let equalKeyPressed =false;
 //operater function
 
 function operater(sign){
-    if(ans > 0) ans;
+    if(ans > 0) num1 = ans;
     num1 = String(num1).replaceAll(" ","");
     num2 = String(num2).replaceAll(" ","");
 
@@ -44,7 +44,7 @@ function operater(sign){
     num2 = +num2;
     if(sign == "+") ans = add(num1,num2);
     else if(sign == "-") ans = subtract(num1, num2);
-    else if(sign == '*') ans = multiply(num1, num1);
+    else if(sign == '*') ans = multiply(num1, num2);
     else if(sign == '/') ans = divide(num1, num2);
 
     console.table(ans,sign,num1,num2)
