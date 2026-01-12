@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Ubuntu, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Azeret Mono', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body{
@@ -21,16 +21,19 @@ body{
     width: 40%;
     height: 45rem;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.904);
 }
 
 #display{
     justify-self: flex-start;
     margin-top: 100px;
     border-top: 5px solid black;
-    flex: 1 1 auto;
+    flex: 1 1 115px;
     display: flex;
     justify-content: flex-end;
     align-items: end;
+    background-color: white;
+    color: black;
 }
 
 #nums{
@@ -38,7 +41,7 @@ body{
     min-width: 30px;
     height: auto;
     font-weight: 700px;
-    font-size: large;
+    font-size: 50px;
 }
 
 #buttons-container{
@@ -46,10 +49,15 @@ body{
     flex: 2 1 400px;
     display: flex;
     flex-wrap: wrap;
+    background-color: rgb(155, 93, 224);
+    
 }
 
 .btn{
     flex: 1 1 calc(100%/4);
     font-size: large;
+    color: white;
+    background-color: rgb(155, 93, 224);
+    border: 2px solid rgb(0, 0, 0);
 }
 
