@@ -36,7 +36,7 @@ let equalKeyPressed =false;
 //operater function
 
 function operater(sign){
-    if(ans > 0) num1 = ans;
+
     num1 = String(num1).replaceAll(" ","");
     num2 = String(num2).replaceAll(" ","");
 
@@ -96,6 +96,7 @@ let display = document.querySelector("#nums")
             && display.textContent !=" /" ) num2 = display.textContent;
 
             display.textContent = operater(sign);
+            num1 = display.textContent;
             sign = btn;
             check = true;
             numberKeyPressed = false;
