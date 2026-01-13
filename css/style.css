@@ -9,7 +9,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    background-color: #5959e5;
+    background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+    background-size: 44px 77px;
+    background-position: 0 0, 0 0, 22px 39px, 22px 39px, 0 0, 22px 39px;
+    }
 
 #outside{
     margin-top: 50px;
@@ -21,7 +25,7 @@ body{
     width: 40%;
     height: 45rem;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.904);
+    background-color: rgba(0, 0, 0);
 }
 
 #display{
@@ -59,5 +63,6 @@ body{
     color: white;
     background-color: rgb(155, 93, 224);
     border: 2px solid rgb(0, 0, 0);
+    box-shadow: 7px 7px 20px 2px rgb(0, 0, 0);
 }
 

@@ -46,9 +46,7 @@ function operater(sign){
 
     console.table(ans,sign,num1,num2)
     if(typeof ans == "number") ans = Math.round(ans);
-    return ans;
-
-    
+    return ans;    
 }
 
 
